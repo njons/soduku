@@ -1,0 +1,30 @@
+body {
+  background: hotpink;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 20px;
+}
+
+#root {
+  margin: auto;
+  background-color: yellow;
+  font-weight: 400;
+  padding: 20px;
+  height: calc(100vh - 80px);
+  display: flex;
+}
+
+h1 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 0 10px 0;
+  letter-spacing: 2px;
+}
+
+#board {
+  background-color: grey;
+  border: solid 5px black;
+}
