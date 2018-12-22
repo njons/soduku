@@ -1,32 +1,43 @@
 import React from "react";
+import Square from "./Square";
 import randNum from "../utils/randNum";
 
 class Board extends React.Component {
   state = {
-    boardArray: this.generateBoard(2, 3) // generates the grid (and holds answers?)
+    boardNumbers: this.generateBoard() // generates the grid
   };
 
-  generateBoard(x, y) {
-    console.log("this is x:", x);
-    console.log("this is y:", y);
-
+  generateBoard() {
     let board = [];
     // let id = 0;
-    for (let i = 0; i < 2; i++) {
-      console.log("this is row:", i);
-      console.log("this is row:", x);
-      board.push("5");
+    const arrayLength = 6;
+    for (let i = 0; i < arrayLength; i++) {
+      console.log("this is column:", i);
+      // console.log("this is number:", x);
       console.log("this is board:", board);
-      for (let j = 0; j < 3; j++) {
-        console.log("this is row:", j);
-        console.log("this is row:", y);
-        board.push("10");
-        console.log("this is board:", board);
-      }
+      // id++;
+      // board.push(id);
     }
+    // set the values in the 6 squares
+    console.log("this is board outside of for loop:", board);
+    board = this.addCoordinates(board);
     return board;
   }
 
+  addCoordinates(board) {
+    // console.log("this is x:", x);
+    // console.log("this is y:", y);
+    console.log("time ot add coordinates x and y");
+  }
+
+  // setNumbers(board) {
+  //   let x = randNum(6);
+  //   let y = randNum(60);
+  //   console.log("this is random x:", x);
+  //   console.log("this is random y:", y);
+  //
+  //   return x, y;
+  // }
   // function that sets up the board?
   // takes in number from square and checks if match?
 
@@ -39,7 +50,14 @@ class Board extends React.Component {
           <h1>This is the title</h1>
           <p>This is a paragraph that can give further explanation</p>
         </header>
-        <div id="board">{this.state.boardArray}</div>
+        <div id="board">
+          {this.state.boardNumbers.map((row, i) => (
+            <li key={i}>
+              {" "}
+              <Square />
+            </li>
+          ))}
+        </div>
       </div>
       // board render
       // use the board state (if holds answers) and insert the values given to each square

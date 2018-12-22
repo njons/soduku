@@ -5,6 +5,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   padding: 20px;
+  display: flex;
 }
 
 #root {
@@ -13,7 +14,6 @@ body {
   font-weight: 400;
   padding: 20px;
   height: calc(100vh - 80px);
-  display: flex;
 }
 
 h1 {
@@ -24,7 +24,29 @@ h1 {
   letter-spacing: 2px;
 }
 
+#container {
+}
+
 #board {
   background-color: grey;
-  border: solid 5px black;
+  /* border: solid 5px black; */
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 10px;
+  height: calc(100vh - 120px);
+}
+
+#square {
+  background-color: darkkhaki;
+  border: solid 2px darkblue;
+  display: flex;
+}
+
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 20px;
+  text-align: center;
 }
