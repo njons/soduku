@@ -16,7 +16,7 @@ body {
   height: calc(100vh - 80px);
 }
 
-header {
+#header {
   margin: 10px 0;
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Square from "./Square";
+import Header from "./Header";
 import randNum from "../utils/randNum";
 
 class Board extends React.Component {
@@ -10,20 +11,27 @@ class Board extends React.Component {
   createGrid(x, y) {
     console.log("this is generateBoard()");
     let board = [];
+    let id = 0;
     // itereate over small grid 6 times
     for (let i = 0; i < x + 1; i++) {
       for (let j = 0; j < y + 1; j++) {
-        board.push([i, j]);
+        board.push({ value: 0, displayed: false, id });
+        id++;
       }
     }
     console.log("this is board:", board);
-    return board;
-    // set the values in the 6 squares
+    // do all the jazz
+    // board = this.logic(x, y);
     // console.log("this is board outside of for loop:", board);
+    return board;
+
     // board = this.addCoordinates(board);
     // return board;
   }
 
+  // logic(x, y) {
+  //   console.log("this is logic");
+  // }
   // addCoordinates(board) {
   //   // // console.log("this is x:", x);
   //   // // console.log("this is y:", y);
@@ -57,15 +65,18 @@ class Board extends React.Component {
   render() {
     return (
       <div id="container">
-        <header>
-          <h1>SODOUK UR HEART OUT!</h1>
-          <p>Classic soduku, becasue it's all you need. </p>
-        </header>
+        <Header />
         <div id="board">
           {this.state.boardNumbers.map((row, i) => (
             <li key={i}>
               {" "}
-              <Square />
+              <Square
+                value={row.value}
+                displayed={row.displayed}
+                id={row.id}
+                parentBoard={this}
+                key={row.id}
+              />
             </li>
           ))}
         </div>

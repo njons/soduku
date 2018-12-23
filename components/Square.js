@@ -1,24 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Input from "./Input";
 
 class Square extends React.Component {
   state = {
-    text: 5
     //state for this?
     // not display correct number
+    // this holds the random number
   };
 
   render() {
     return (
       <div id="square">
-        <input id="text" />
+        <Input />
       </div>
     );
   }
 }
-
-Square.propTypes = {
-  text: PropTypes.number
-};
 
 export default Square;
