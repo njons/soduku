@@ -1,5 +1,5 @@
 body {
-  background: hotpink;
+  background: lightgrey;
   color: black;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -10,10 +10,14 @@ body {
 
 #root {
   margin: auto;
-  background-color: yellow;
+  background: lightgrey;
   font-weight: 400;
   padding: 20px;
   height: calc(100vh - 80px);
+}
+
+header {
+  margin: 10px 0;
 }
 
 h1 {
@@ -40,8 +44,9 @@ li {
   display: grid;
   grid-template-columns: repeat(6, 80px);
   grid-template-rows: repeat(6, 80px);
-  grid-gap: 10px;
-  height: calc(100vh - 120px);
+  grid-gap: 5px;
+  /* height: calc(100vh - 120px); */
+  padding: 10px;
 }
 
 #square {
@@ -58,4 +63,7 @@ li {
   text-align: center;
   height: 80px;
   width: 80px;
+  border: none;
+  outline: none;
+  padding: 0;
 }

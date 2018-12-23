@@ -58,8 +58,8 @@ class Board extends React.Component {
     return (
       <div id="container">
         <header>
-          <h1>This is the title</h1>
-          <p>This is a paragraph that can give further explanation</p>
+          <h1>SODOUK UR HEART OUT!</h1>
+          <p>Classic soduku, becasue it's all you need. </p>
         </header>
         <div id="board">
           {this.state.boardNumbers.map((row, i) => (
