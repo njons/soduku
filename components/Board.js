@@ -4,31 +4,42 @@ import randNum from "../utils/randNum";
 
 class Board extends React.Component {
   state = {
-    boardNumbers: this.generateBoard() // generates the grid
+    boardNumbers: this.createGrid(5, 5) // generates the grid
   };
 
-  generateBoard() {
+  createGrid(x, y) {
+    console.log("this is generateBoard()");
     let board = [];
-    // let id = 0;
-    const arrayLength = 6;
-    for (let i = 0; i < arrayLength; i++) {
-      console.log("this is column:", i);
-      // console.log("this is number:", x);
-      console.log("this is board:", board);
-      // id++;
-      // board.push(id);
+    // itereate over small grid 6 times
+    for (let i = 0; i < x + 1; i++) {
+      for (let j = 0; j < y + 1; j++) {
+        board.push([i, j]);
+      }
     }
-    // set the values in the 6 squares
-    console.log("this is board outside of for loop:", board);
-    board = this.addCoordinates(board);
+    console.log("this is board:", board);
     return board;
+    // set the values in the 6 squares
+    // console.log("this is board outside of for loop:", board);
+    // board = this.addCoordinates(board);
+    // return board;
   }
 
-  addCoordinates(board) {
-    // console.log("this is x:", x);
-    // console.log("this is y:", y);
-    console.log("time ot add coordinates x and y");
-  }
+  // addCoordinates(board) {
+  //   // // console.log("this is x:", x);
+  //   // // console.log("this is y:", y);
+  //   // let x = 1;
+  //   // let y = 1;
+  //   // for (let i = 0; i < board; i++) {
+  //   //   board.push([]);
+  //   //   console.log("this is column:", i);
+  //   //   // console.log("this is number:", x);
+  //   //   console.log("this is board:", board);
+  //   //   // id++;
+  //   //   // board.push(id);
+  //   // }
+  //
+  //   console.log("time ot add coordinates x and y");
+  // }
 
   // setNumbers(board) {
   //   let x = randNum(6);

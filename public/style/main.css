@@ -25,28 +25,37 @@ h1 {
 }
 
 #container {
+  /* display: flex;
+  flex-direction: column;
+  width: 100%; */
+}
+
+li {
+  list-style: none;
 }
 
 #board {
   background-color: grey;
   /* border: solid 5px black; */
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(6, 80px);
+  grid-template-rows: repeat(6, 80px);
   grid-gap: 10px;
   height: calc(100vh - 120px);
 }
 
 #square {
-  background-color: darkkhaki;
-  border: solid 2px darkblue;
-  display: flex;
+  /* background-color: darkkhaki; */
+  /* border: solid 2px darkblue; */
+  /* height: 80px;
+  width: 80px; */
 }
 
 #text {
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  padding: 20px;
   text-align: center;
+  height: 80px;
+  width: 80px;
 }
