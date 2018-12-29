@@ -5,11 +5,10 @@ import randNum from "../utils/randNum";
 
 class Board extends React.Component {
   state = {
-    boardNumbers: this.createGrid(5, 5) // generates the grid
+    boardNumbers: this.createGrid(5, 5) // generates empty grid
   };
 
   createGrid(x, y) {
-    console.log("this is generateBoard()");
     let board = [];
     let id = 0;
     // itereate over small grid 6 times
@@ -21,12 +20,18 @@ class Board extends React.Component {
     }
     console.log("this is board:", board);
     // do all the jazz
-    // board = this.logic(x, y);
+    board = this.fillBoard(x, y);
     // console.log("this is board outside of for loop:", board);
-    return board;
+    // return board;
 
     // board = this.addCoordinates(board);
     // return board;
+  }
+
+  fillBoard(x, y) {
+    const nums = [1, 2, 3, 4, 5, 6];
+
+    console.log("this is fillBoard()");
   }
 
   // logic(x, y) {
@@ -73,8 +78,6 @@ class Board extends React.Component {
               <Square
                 value={row.value}
                 displayed={row.displayed}
-                id={row.id}
-                parentBoard={this}
                 key={row.id}
               />
             </li>
