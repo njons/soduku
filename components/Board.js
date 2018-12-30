@@ -20,18 +20,17 @@ class Board extends React.Component {
     }
     console.log("this is board:", board);
     // do all the jazz
-    board = this.fillBoard(x, y);
-    // console.log("this is board outside of for loop:", board);
+    board = this.addRandNum(board);
+    // board = this.addRandNum(board, x, y);
+    console.log("this is the filled board:", board);
     // return board;
 
     // board = this.addCoordinates(board);
-    // return board;
+    return board;
   }
 
-  fillBoard(x, y) {
-    const nums = [1, 2, 3, 4, 5, 6];
-
-    console.log("this is fillBoard()");
+  addRandNum(board) {
+    return board.map(sq => (sq.value = randNum(6)));
   }
 
   // logic(x, y) {
@@ -72,15 +71,8 @@ class Board extends React.Component {
       <div id="container">
         <Header />
         <div id="board">
-          {this.state.boardNumbers.map((row, i) => (
-            <li key={i}>
-              {" "}
-              <Square
-                value={row.value}
-                displayed={row.displayed}
-                key={row.id}
-              />
-            </li>
+          {this.state.boardNumbers.map((square, i) => (
+            <Square value={square.value} displayed={square.displayed} key={i} />
           ))}
         </div>
       </div>

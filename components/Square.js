@@ -4,6 +4,7 @@ import Input from "./Input";
 
 class Square extends React.Component {
   state = {
+    value: 0
     //state for this?
     // not display correct number
     // this holds the random number
