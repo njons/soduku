@@ -11,4 +11,7 @@ class Input extends React.Component {
   }
 }
 
+// add this to Square.js
+<Input displayed={this.props.displayed} />;
+
 export default Input;
